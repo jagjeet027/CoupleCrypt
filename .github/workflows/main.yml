@@ -1,14 +1,27 @@
-name: schedule on CoupleCrypt
+name: Schedule on CoupleCrypt
 
 on:
   schedule:
-         - cron: '12 1 * * *' 
+    - cron: '12 1 * * *' # Runs daily at 1:12 AM UTC
 
 jobs:
   couple-crypt-daily-task:
     runs-on: ubuntu-latest
 
-  steps:
-     name : CoupleCrypt and loveVoult
-     runs-on: echo "⏰ Hello Jaggi! Scheduled job ran at $(date)"
-     
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # You can change this based on your project
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm run build
+
+      - name: Run Node Server (Optional)
+        run: node server.js # Or whatever your entry point is
