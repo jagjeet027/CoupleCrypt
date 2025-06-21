@@ -1,0 +1,14 @@
+name: schedule on CoupleCrypt
+
+on:
+  schedule:
+         - cron: '12 1 * * *' 
+
+jobs:
+  couple-crypt-daily-task:
+    runs-on: ubuntu-latest
+
+  steps:
+     name : CoupleCrypt and loveVoult
+     runs-on: echo "⏰ Hello Jaggi! Scheduled job ran at $(date)"
+     
