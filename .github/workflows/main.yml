@@ -1,8 +1,8 @@
 name: Schedule on CoupleCrypt
 
-on:
-  schedule:
-    - cron: '12 1 * * *' # Runs daily at 1:12 AM UTc
+# on:
+  # schedule:
+  #   - cron: '12 1 * * *' # Runs daily at 1:12 AM UTc
 
 jobs:
   couple-crypt-daily-task:
